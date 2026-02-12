@@ -3,105 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode: Queen | The Cover Uncovered</title>
+    <title>Queen Episode | The Cover Uncovered</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="episode-nav container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <nav class="container" style="padding: 20px 0;">
+        <a href="index.html" style="color: #888; text-decoration: none;">← Back to Home</a>
     </nav>
 
     <header class="episode-hero">
         <div class="container">
-            <span class="label">LATEST EPISODE</span>
-            <h1>When Music Meets Image</h1>
-            <h2>Queen – A Night at the Opera (1975)</h2>
+            <span style="background: #d4af37; color: #000; padding: 2px 10px; font-weight: bold; font-size: 0.8rem;">EPISODE 01</span>
+            <h1>A Night at the Opera</h1>
+            <p class="subtitle">Decoding Freddie Mercury's Masterpiece.</p>
         </div>
     </header>
 
     <section class="content container">
-        
         <div class="story-block">
-            <h3>The Cover Story</h3>
-            <p>It’s not a photo. It’s Queen’s crest, designed by <strong>Freddie Mercury</strong> himself. The symbols represent the band members’ zodiac signs (Lions for Leo, Crabs for Cancer, Fairies for Virgo), and on top, a phoenix symbolizing rebirth and power.</p>
+            <h3>The Art Behind the Music</h3>
+            <p>It's not just a fancy drawing. Freddie Mercury, who actually studied graphic design, created this crest to make the band look royal. He combined the zodiac signs of all members: two lions for Leo, a crab for Cancer, and two fairies for Virgo. All protected by a massive Phoenix.</p>
             
             <blockquote>
-                "I don’t care, dear. We’re releasing it." <br>
-                <cite>— Freddie Mercury on Bohemian Rhapsody</cite>
+                "I don't care, dear. We're releasing it." <br>
+                <cite>— Freddie Mercury on why Bohemian Rhapsody was 6 minutes long.</cite>
             </blockquote>
-
-            <p>Freddie wanted Queen to look timeless, dramatic, almost royal. This matches "Bohemian Rhapsody" perfectly: musical chaos, no chorus, constantly changing styles... but completely intentional.</p>
         </div>
 
         <div class="video-section">
-            <h3>📺 Watch the Analysis</h3>
+            <h3>Main Analysis</h3>
             <div class="video-wrapper">
-                <video controls poster="https://placehold.co/800x450/1a1a1a/gold?text=Play+Episode">
+                <video controls>
                     <source src="videos/podcast-queen.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                    Your browser doesn't support video. Check the 'videos' folder.
                 </video>
             </div>
         </div>
 
-        <hr class="divider">
-
-        <section class="conspiracy-box">
-            <h2>🕵️‍♂️ INVESTIGATION: The Clone Theory</h2>
-            <p>In the following video, Host 1 and Host 2 look... suspiciously similar. We have analyzed the footage and here are our scientific findings:</p>
-            <ul class="evidence-list">
-                <li><strong>Evidence A:</strong> Same dramatic hand gestures (0% coordination).</li>
-                <li><strong>Evidence B:</strong> Same level of "English-Project-Anxiety" in the eyes.</li>
-                <li><strong>Evidence C:</strong> The record label (our teacher) hasn't noticed yet.</li>
-            </ul>
-            <p class="conclusion"><strong>CONCLUSION:</strong> We are either long-lost twins or we just ran out of actors.</p>
-        </section>
-
         <div class="extra-section">
-            <h3>🎬 Exclusive Extra: The Recreation</h3>
-            <p>We tried to recreate the iconic video. The lighting, the drama, the poses.</p>
-            
-            <div class="video-wrapper extra-video">
+            <h3>The Recreation (The Drama!)</h3>
+            <p>We tried to recreate the vibes of the original music video. Dark room, strange faces, and a lot of passion. Check it out below.</p>
+            <div class="video-wrapper">
                 <video controls>
                     <source src="videos/extra-queen.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <button onclick="toggleConspiracy()" class="secret-btn">🕵️‍♂️ TOP SECRET: THE CLONE THEORY</button>
+                <div id="conspiracy-content" class="hidden">
+                    <h4>Wait... are they the same person?</h4>
+                    <p>Scientific investigation: After watching the recreation, people asked "Why do Host 1 and Host 2 look like twins?". The truth? We had no budget for actors, so we just used clones. Or maybe we are just the same person moving very fast. You decide.</p>
+                </div>
             </div>
         </div>
 
         <div class="sass-container">
-            <h3>Need some inspiration?</h3>
-            <p>Ask Freddie what he thinks about our grade.</p>
-            <button onclick="freddieSass()" class="btn-sass">⚡ Click for Freddie's Wisdom</button>
-            <p id="sass-text"></p>
+            <h3>Freddie's Quote Generator</h3>
+            <p>Click the button for some legendary motivation.</p>
+            <button onclick="freddieSass()" class="btn-sass">⚡ DARLING, CLICK ME</button>
+            <p id="sass-text" style="opacity: 0; transition: 0.5s; margin-top: 20px; font-size: 1.5rem; color: #d4af37;"></p>
         </div>
 
-        <div class="final-thought">
-            <h3>Final Question</h3>
-            <p><strong>Why are album covers still important?</strong> Because they give music an identity. You hear the song, but you remember the image.</p>
+        <div class="final-thought" style="margin-top: 50px; border-left: 4px solid #d4af37; padding: 20px; background: #1a1a1a;">
+            <h3>Wrapping up</h3>
+            <p>So, does the cover matter? Absolutely. Without the crest, Queen wouldn't be Queen. It gave the music a face before the first note even played.</p>
         </div>
-
     </section>
 
     <footer>
-        <p>&copy; 2025 The Cover Uncovered. <a href="index.html" style="color:#d4af37;">Back to Home</a></p>
+        <p>Made with ☕ and 🤘 for the English Department.</p>
     </footer>
 
     <script>
+        // Easter Egg Logic
+        function toggleConspiracy() {
+            const content = document.getElementById("conspiracy-content");
+            content.classList.toggle("revealed");
+        }
+
+        // Sass Button Logic
         function freddieSass() {
             const quotes = [
-                "I don't care, dear. We're releasing it!",
-                "I won't be a rockstar. I will be a legend.",
+                "I don't care, dear!",
                 "Dullness is a disease. Don't be dull.",
-                "I'm just a musical prostitute, my dear!",
+                "I won't be a rockstar. I will be a legend.",
+                "We are releasing it!",
                 "Get on with it, darling."
             ];
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById('sass-text').innerText = '"' + randomQuote + '"';
-            document.getElementById('sass-text').style.opacity = 1;
+            const display = document.getElementById('sass-text');
+            display.innerText = '"' + quotes[Math.floor(Math.random() * quotes.length)] + '"';
+            display.style.opacity = 1;
         }
     </script>
-
 </body>
 </html>
