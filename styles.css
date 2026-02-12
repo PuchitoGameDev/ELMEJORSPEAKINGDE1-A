@@ -1,15 +1,19 @@
-/* THE COVER UNCOVERED - OFFICIAL STYLES
+/* THE COVER UNCOVERED - OFFICIAL STYLES 
    "Designed with sweat, tears, and zero budget" 
+   Version 2.0: Now with 100% more drama.
 */
 
 :root {
     --gold: #d4af37;
-    --dark-bg: #0f0f0f;
-    --card-bg: #1a1a1a;
-    --text-main: #e0e0e0;
-    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --dark-bg: #0a0a0a;
+    --card-bg: rgba(26, 26, 26, 0.8);
+    --text-main: #f0f0f0;
+    --text-dim: #a0a0a0;
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* --- BASE STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -17,176 +21,192 @@ body {
     color: var(--text-main); 
     font-family: 'Roboto', sans-serif; 
     overflow-x: hidden;
+    line-height: 1.6;
 }
+
+/* Custom Selection Color (Matches Gold) */
+::selection { background: var(--gold); color: #000; }
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3 { 
     font-family: 'Playfair Display', serif; 
     color: #fff; 
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
 }
 
-/* --- HERO SECTION (The Hook) --- */
+/* --- HERO SECTION --- */
 .hero-home { 
-    height: 80vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                 url('https://images.unsplash.com/photo-1514525253361-b83f859b73c0?auto=format&fit=crop&w=1200'); 
     background-size: cover;
-    background-attachment: fixed; /* Parallax effect */
-    border-bottom: 4px solid var(--gold);
+    background-position: center;
+    background-attachment: fixed; 
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     padding: 0 20px;
 }
 
-.hero-home h1 { font-size: 4.5rem; text-transform: uppercase; margin-bottom: 10px; }
-.subtitle { font-size: 1.6rem; color: var(--gold); font-style: italic; margin-bottom: 25px; }
+.hero-home h1 { 
+    font-size: clamp(3rem, 8vw, 5.5rem); 
+    text-transform: uppercase; 
+    margin-bottom: 15px;
+    text-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
 
+.subtitle { 
+    font-size: clamp(1.1rem, 3vw, 1.8rem); 
+    color: var(--gold); 
+    font-style: italic; 
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* --- BUTTONS --- */
 .btn-primary { 
     display: inline-block; 
-    background: var(--gold); 
-    color: #000; 
-    padding: 15px 40px; 
-    border-radius: 50px; 
+    background: transparent; 
+    color: var(--gold); 
+    padding: 16px 45px; 
+    border-radius: 4px; /* Angled edges look more rock-n-roll */
     font-weight: 900; 
     text-decoration: none; 
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+    border: 2px solid var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     transition: var(--transition);
 }
 
 .btn-primary:hover { 
-    transform: translateY(-5px); 
-    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-    background: #fff;
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--gold-glow);
 }
 
-/* --- THE REALITY CHECK TABLE --- */
-.budget-section { padding: 100px 20px; text-align: center; }
+/* --- BUDGET TABLE (Glassmorphism) --- */
+.budget-section { padding: 80px 20px; text-align: center; }
 .budget-table { 
     width: 100%; 
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto; 
     background: var(--card-bg); 
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 2px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
-.budget-table th, .budget-table td { padding: 20px; text-align: left; border-bottom: 1px solid #222; }
-.budget-table th { background: #000; color: var(--gold); font-size: 1.1rem; }
-.budget-table tr:last-child td { border-bottom: none; }
-.budget-table tr:hover { background: #222; }
+.budget-table th, .budget-table td { padding: 22px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.budget-table th { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+.budget-table tr:hover { background: rgba(212, 175, 55, 0.05); }
 
-/* --- VINYL GRID (The Cool Part) --- */
+/* --- VINYL GRID --- */
 .grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 50px; 
-    padding: 80px 0; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 60px; 
+    padding: 60px 0; 
 }
 
 .vinyl-card { 
     position: relative; 
-    background: transparent;
+    padding: 20px;
     transition: var(--transition);
 }
 
 .vinyl-sleeve { 
     position: relative; 
     z-index: 2; 
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.8);
-    border-radius: 4px;
-    overflow: hidden;
+    box-shadow: 15px 15px 35px rgba(0,0,0,0.9);
+    transition: var(--transition);
 }
-
-.vinyl-sleeve img { width: 100%; display: block; filter: grayscale(20%); transition: 0.5s; }
 
 .vinyl-disc { 
     position: absolute; 
-    top: 5px; right: 0; 
-    width: 270px; height: 270px; 
-    background: radial-gradient(circle, #111 20%, #222 25%, #111 30%, #222 100%); 
+    top: 25px; right: 20px; 
+    width: 280px; height: 280px; 
+    background: radial-gradient(circle, #000 15%, #111 16%, #000 17%, #111 100%); 
     border-radius: 50%; 
     z-index: 1; 
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
 }
 
-.vinyl-card:hover .vinyl-disc { transform: translateX(140px) rotate(180deg); }
-.vinyl-card:hover .vinyl-sleeve img { filter: grayscale(0%); }
+/* Vinyl Spin & Move Animation */
+.vinyl-card:hover .vinyl-disc { 
+    transform: translateX(120px) rotate(180deg); 
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+}
 
-/* --- REVIEWS --- */
-.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+.vinyl-card:hover .vinyl-sleeve { transform: translateY(-10px) rotate(-2deg); }
+
+/* --- REVIEW CARDS --- */
 .review-card { 
-    background: #1a1a1a; 
-    padding: 30px; 
-    border-radius: 15px;
-    position: relative;
-    border: 1px solid #333;
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    padding: 40px; 
+    border-radius: 4px;
+    border-top: 2px solid transparent;
+    transition: var(--transition);
 }
 
-.review-card::before {
-    content: '"';
-    position: absolute;
-    top: -10px; left: 20px;
-    font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.3;
-}
+.review-card:hover { border-top-color: var(--gold); transform: translateY(-5px); }
+.review-card p { font-size: 1.1rem; color: #fff; font-style: italic; }
+.review-card span { display: block; margin-top: 15px; color: var(--gold); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
 
 /* --- EPISODE PAGE --- */
-.episode-hero { padding: 100px 0 50px; text-align: center; border-bottom: 1px solid #333; }
-.episode-hero h1 { font-size: 3.5rem; }
-
-.video-wrapper { 
-    background: #000; 
-    padding: 10px; 
-    border: 2px solid #333; 
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(212, 175, 55, 0.1);
-    margin: 40px 0;
+.episode-hero { 
+    background: #000;
+    padding: 120px 0 60px; 
+    text-align: center; 
 }
 
-video { width: 100%; border-radius: 5px; }
+.video-wrapper { 
+    background: #111; 
+    padding: 15px; 
+    border: 1px solid #222; 
+    transition: var(--transition);
+}
 
-/* --- EASTER EGG (The Secret) --- */
+.video-wrapper:hover { border-color: var(--gold); box-shadow: 0 0 40px var(--gold-glow); }
+
+/* --- THE CLONE SECRET BUTTON --- */
 .secret-btn { 
-    background: #222; 
-    border: 1px solid #444; 
-    color: #888; 
-    padding: 8px 15px; 
-    font-size: 0.7rem;
-    cursor: pointer;
-    border-radius: 4px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #555;
+    padding: 10px 20px;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: crosshair; /* Changes to crosshair for mystery */
     transition: 0.3s;
 }
 
-.secret-btn:hover { background: #ff4757; color: #fff; border-color: #ff4757; }
+.secret-btn:hover { color: #fff; border-color: #ff4757; text-shadow: 0 0 10px #ff4757; }
 
 .hidden { 
-    display: none; 
-    background: #ff4757; 
+    background: #900; /* Darker blood red */
     color: #fff; 
-    padding: 20px; 
-    border-radius: 10px; 
-    margin-top: 20px;
-    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
-}
-
-.revealed { display: block !important; animation: slideDown 0.4s ease-out; }
-
-@keyframes slideDown {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace; /* Looks like a classified document */
 }
 
 /* --- FOOTER --- */
-footer { padding: 60px 0; text-align: center; border-top: 1px solid #222; color: #555; }
+footer { 
+    padding: 80px 0 40px; 
+    text-align: center; 
+    font-size: 0.75rem; 
+    color: #444; 
+    letter-spacing: 1px;
+}
 
-/* Responsive */
+/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .hero-home h1 { font-size: 2.5rem; }
-    .vinyl-card:hover .vinyl-disc { transform: translateY(100px); }
-    .grid { grid-template-columns: 1fr; }
+    .hero-home h1 { font-size: 2.8rem; }
+    .vinyl-card:hover .vinyl-disc { transform: translateY(80px) rotate(90deg); }
+    .vinyl-card:hover .vinyl-sleeve { transform: scale(0.95); }
+    .grid { gap: 100px; } /* More space for the disc drop on mobile */
 }
