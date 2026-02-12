@@ -209,6 +209,13 @@ video:hover { filter: brightness(1); }
 .revealed { display: block !important; animation: fadeIn 0.8s ease; }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+body {
+    animation: fadeInPage 1s ease-out;
+}
 
 /* --- SASS BUTTON (Clean) --- */
 .sass-container {
