@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episodio: Queen | The Cover Uncovered</title>
+    <title>Episode: Queen | The Cover Uncovered</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -36,27 +36,45 @@
         </div>
 
         <div class="video-section">
-            <h3>Watch the Analysis</h3>
+            <h3>📺 Watch the Analysis</h3>
             <div class="video-wrapper">
                 <video controls poster="https://placehold.co/800x450/1a1a1a/gold?text=Play+Episode">
                     <source src="videos/podcast-queen.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
+                    Your browser does not support the video tag.
                 </video>
             </div>
         </div>
 
         <hr class="divider">
 
+        <section class="conspiracy-box">
+            <h2>🕵️‍♂️ INVESTIGATION: The Clone Theory</h2>
+            <p>In the following video, Host 1 and Host 2 look... suspiciously similar. We have analyzed the footage and here are our scientific findings:</p>
+            <ul class="evidence-list">
+                <li><strong>Evidence A:</strong> Same dramatic hand gestures (0% coordination).</li>
+                <li><strong>Evidence B:</strong> Same level of "English-Project-Anxiety" in the eyes.</li>
+                <li><strong>Evidence C:</strong> The record label (our teacher) hasn't noticed yet.</li>
+            </ul>
+            <p class="conclusion"><strong>CONCLUSION:</strong> We are either long-lost twins or we just ran out of actors.</p>
+        </section>
+
         <div class="extra-section">
-            <h3>Exclusive Extra: The Recreation</h3>
-            <p>We tried to recreate the iconic video. The lighting, the drama, the poses. Do the people in this video look familiar? Almost like they are all the same person...</p>
+            <h3>🎬 Exclusive Extra: The Recreation</h3>
+            <p>We tried to recreate the iconic video. The lighting, the drama, the poses.</p>
             
             <div class="video-wrapper extra-video">
                 <video controls>
                     <source src="videos/extra-queen.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
+                    Your browser does not support the video tag.
                 </video>
             </div>
+        </div>
+
+        <div class="sass-container">
+            <h3>Need some inspiration?</h3>
+            <p>Ask Freddie what he thinks about our grade.</p>
+            <button onclick="freddieSass()" class="btn-sass">⚡ Click for Freddie's Wisdom</button>
+            <p id="sass-text"></p>
         </div>
 
         <div class="final-thought">
@@ -67,8 +85,23 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 The Cover Uncovered. <a href="index.html">Volver a Home</a></p>
+        <p>&copy; 2025 The Cover Uncovered. <a href="index.html" style="color:#d4af37;">Back to Home</a></p>
     </footer>
+
+    <script>
+        function freddieSass() {
+            const quotes = [
+                "I don't care, dear. We're releasing it!",
+                "I won't be a rockstar. I will be a legend.",
+                "Dullness is a disease. Don't be dull.",
+                "I'm just a musical prostitute, my dear!",
+                "Get on with it, darling."
+            ];
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('sass-text').innerText = '"' + randomQuote + '"';
+            document.getElementById('sass-text').style.opacity = 1;
+        }
+    </script>
 
 </body>
 </html>
