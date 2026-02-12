@@ -2,7 +2,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #121212; /* Negro Profundo */
+    background-color: #121212; /* Deep Black */
     color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -16,20 +16,6 @@ h1, h2, h3 {
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-/* --- BOTONES --- */
-.btn-primary {
-    display: inline-block;
-    background-color: #d4af37; /* Dorado */
-    color: #000;
-    padding: 12px 30px;
-    font-weight: bold;
-    border-radius: 30px;
-    margin-top: 20px;
-    border: none;
-    cursor: pointer;
-}
-.btn-primary:hover { background-color: #f1c40f; transform: scale(1.05); }
-
 /* --- HERO HOME --- */
 .hero-home {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=1200');
@@ -40,95 +26,121 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
     border-bottom: 3px solid #d4af37;
 }
 
-.hero-home h1 { font-size: 4rem; margin-bottom: 10px; }
+.hero-home h1 { font-size: 3.5rem; margin-bottom: 10px; }
 .subtitle { font-size: 1.5rem; color: #d4af37; font-style: italic; margin-bottom: 20px; }
 .description-block { max-width: 600px; margin: 0 auto 30px auto; color: #bbb; }
 
+/* --- BUTTONS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: #d4af37;
+    color: #000;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+}
+.btn-primary:hover { background-color: #f1c40f; transform: scale(1.05); }
+
 /* --- HOSTS SECTION --- */
-.about-hosts { padding: 80px 20px; text-align: center; background: #181818; }
+.about-hosts { padding: 60px 20px; text-align: center; background: #181818; margin-top: 0; }
 .section-intro { margin-bottom: 40px; color: #888; }
 .hosts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
 .host-card { background: #121212; padding: 20px; border: 1px solid #333; border-radius: 8px; }
 .host-avatar { width: 120px; height: 120px; border-radius: 50%; border: 2px solid #d4af37; margin-bottom: 15px; object-fit: cover; }
 .host-card h3 { color: #d4af37; margin-bottom: 10px; }
 
-/* --- VINYL GRID EFFECT --- */
-.episodes-section { padding: 80px 0; }
+/* --- PROPOSAL 5: BUDGET TABLE --- */
+.budget-section { padding: 60px 0; text-align: center; }
+.budget-section h2 { margin-bottom: 30px; color: #d4af37; }
+.table-responsive { overflow-x: auto; }
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+.budget-table th, .budget-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+.budget-table th { background-color: #000; color: #d4af37; text-transform: uppercase; letter-spacing: 1px; }
+.budget-table tr:hover { background-color: #222; }
+
+/* --- PROPOSAL 3: FAKE REVIEWS --- */
+.fake-reviews { padding: 60px 0; text-align: center; border-top: 1px solid #333; }
+.fake-reviews h2 { margin-bottom: 30px; }
+.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.review-card { background: #1a1a1a; padding: 25px; font-style: italic; border-radius: 8px; border: 1px solid #222; }
+.review-card span { display: block; margin-top: 15px; color: #d4af37; font-size: 0.8rem; font-weight: bold; font-style: normal;}
+
+/* --- VINYL EFFECT --- */
+.episodes-section { padding: 80px 0; background: #121212; }
 .episodes-section h2 { text-align: center; margin-bottom: 50px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; justify-items: center; }
-
-.vinyl-card {
-    position: relative;
-    width: 280px;
-    display: block;
-    cursor: pointer;
-}
-
-.vinyl-sleeve {
-    position: relative;
-    z-index: 2;
-    width: 280px;
-    height: 280px;
-    background: #000;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-}
+.vinyl-card { position: relative; width: 280px; display: block; cursor: pointer; }
+.vinyl-sleeve { position: relative; z-index: 2; width: 280px; height: 280px; background: #000; transition: transform 0.3s ease; }
 .vinyl-sleeve img { width: 100%; height: 100%; object-fit: cover; }
-
-.vinyl-disc {
-    position: absolute;
-    top: 5px; right: 5px;
-    width: 270px; height: 270px;
-    background: radial-gradient(circle, #111 20%, #333 21%, #111 22%, #333 100%);
-    border-radius: 50%;
-    z-index: 1;
-    transition: transform 0.4s ease;
-}
-
-/* Animación al pasar el ratón */
+.vinyl-disc { position: absolute; top: 5px; right: 5px; width: 270px; height: 270px; background: radial-gradient(circle, #111 20%, #333 21%, #111 22%, #333 100%); border-radius: 50%; z-index: 1; transition: transform 0.4s ease; }
 .vinyl-card:hover .vinyl-disc { transform: translateX(50%) rotate(90deg); }
 .vinyl-card:hover .vinyl-sleeve { transform: rotate(-2deg); }
-
 .card-info { margin-top: 15px; text-align: center; z-index: 3; position: relative; }
 .ep-number { font-size: 0.8rem; color: #d4af37; font-weight: bold; letter-spacing: 1px; }
 .locked { opacity: 0.5; pointer-events: none; filter: grayscale(1); }
-
-/* --- NEWSLETTER --- */
-.newsletter { padding: 60px 0; text-align: center; border-top: 1px solid #333; }
-.subscribe-form { margin-top: 20px; }
-.subscribe-form input {
-    padding: 12px;
-    border-radius: 30px;
-    border: 1px solid #333;
-    background: #000;
-    color: #fff;
-    width: 250px;
-    margin-right: 10px;
-}
 
 /* --- EPISODE PAGE SPECIFIC --- */
 .episode-nav { padding: 20px 0; }
 .back-link { color: #888; font-size: 0.9rem; }
 .back-link:hover { color: #d4af37; }
-
 .episode-hero { text-align: center; padding: 40px 0; border-bottom: 1px solid #333; }
 .label { background: #d4af37; color: #000; padding: 2px 8px; font-size: 0.7rem; font-weight: bold; }
-.episode-hero h1 { margin-top: 10px; font-size: 2.5rem; }
-.episode-hero h2 { font-size: 1.2rem; color: #aaa; font-weight: 300; }
-
 .content { padding: 50px 20px; max-width: 800px; }
 .story-block p { margin-bottom: 20px; font-size: 1.1rem; }
 blockquote { border-left: 3px solid #d4af37; padding-left: 20px; font-style: italic; color: #fff; font-size: 1.2rem; margin: 30px 0; }
-
-.video-wrapper {
-    margin-top: 20px;
-    border: 1px solid #333;
-    padding: 5px;
-    background: #000;
-}
+.video-wrapper { margin-top: 20px; border: 1px solid #333; padding: 5px; background: #000; }
 video { width: 100%; height: auto; display: block; }
+
+/* --- PROPOSAL 1: CONSPIRACY BOX --- */
+.conspiracy-box {
+    background: #000;
+    border: 2px dashed #d4af37;
+    padding: 30px;
+    margin: 60px 0;
+    border-radius: 10px;
+    position: relative;
+}
+.conspiracy-box h2 { color: #d4af37; font-size: 1.5rem; margin-bottom: 15px; }
+.evidence-list { list-style: none; padding: 20px 0; }
+.evidence-list li { margin-bottom: 10px; color: #fff; }
+.evidence-list li strong { color: #f1c40f; }
+
+/* --- PROPOSAL 4: SASS BUTTON --- */
+.sass-container {
+    text-align: center;
+    background: #1a1a1a;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.btn-sass {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+.btn-sass:hover { background: #d4af37; }
+#sass-text { margin-top: 20px; font-size: 1.5rem; color: #d4af37; font-family: 'Playfair Display', serif; min-height: 30px; font-style: italic; }
 
 .divider { border: 0; height: 1px; background: #333; margin: 60px 0; }
 .final-thought { background: #1a1a1a; padding: 30px; margin-top: 50px; border-left: 5px solid #d4af37; }
-
 footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; margin-top: 40px; border-top: 1px solid #333; }
