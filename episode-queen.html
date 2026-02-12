@@ -80,18 +80,19 @@
             const content = document.getElementById("conspiracy-content");
             content.classList.toggle("revealed");
         }
-
+    
         function freddieSass() {
             const quotes = [
                 "I don't care, dear!",
                 "Dullness is a disease. Don't be dull.",
                 "I won't be a rockstar. I will be a legend.",
                 "We are releasing it!",
-                "Get on with it, darling."
+                "Get on with it, darling.", // <-- ESTA COMA FALTABA
                 "Give him a 10, teacher."
             ];
             const display = document.getElementById('sass-text');
-            display.style.opacity = 0; // Efecto de parpadeo al cambiar
+            
+            display.style.opacity = 0; 
             
             setTimeout(() => {
                 display.innerText = '"' + quotes[Math.floor(Math.random() * quotes.length)] + '"';
