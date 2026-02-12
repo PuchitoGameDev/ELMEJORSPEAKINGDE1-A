@@ -1,146 +1,192 @@
-/* --- RESET & BASICS --- */
+/* THE COVER UNCOVERED - OFFICIAL STYLES
+   "Designed with sweat, tears, and zero budget" 
+*/
+
+:root {
+    --gold: #d4af37;
+    --dark-bg: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --text-main: #e0e0e0;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: #121212; /* Deep Black */
-    color: #e0e0e0;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+body { 
+    background: var(--dark-bg); 
+    color: var(--text-main); 
+    font-family: 'Roboto', sans-serif; 
+    overflow-x: hidden;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 { 
+    font-family: 'Playfair Display', serif; 
+    color: #fff; 
+    letter-spacing: 1px;
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-
-/* --- HERO HOME --- */
-.hero-home {
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=1200');
-    background-size: cover;
-    background-position: center;
-    padding: 120px 0;
+/* --- HERO SECTION (The Hook) --- */
+.hero-home { 
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-bottom: 3px solid #d4af37;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                url('https://images.unsplash.com/photo-1514525253361-b83f859b73c0?auto=format&fit=crop&w=1200'); 
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    border-bottom: 4px solid var(--gold);
+    padding: 0 20px;
 }
 
-.hero-home h1 { font-size: 3.5rem; margin-bottom: 10px; }
-.subtitle { font-size: 1.5rem; color: #d4af37; font-style: italic; margin-bottom: 20px; }
-.description-block { max-width: 600px; margin: 0 auto 30px auto; color: #bbb; }
+.hero-home h1 { font-size: 4.5rem; text-transform: uppercase; margin-bottom: 10px; }
+.subtitle { font-size: 1.6rem; color: var(--gold); font-style: italic; margin-bottom: 25px; }
 
-/* --- BUTTONS --- */
-.btn-primary {
-    display: inline-block;
-    background-color: #d4af37;
-    color: #000;
-    padding: 12px 30px;
-    font-weight: bold;
-    border-radius: 30px;
-    margin-top: 20px;
-    border: none;
-    cursor: pointer;
+.btn-primary { 
+    display: inline-block; 
+    background: var(--gold); 
+    color: #000; 
+    padding: 15px 40px; 
+    border-radius: 50px; 
+    font-weight: 900; 
+    text-decoration: none; 
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
 }
-.btn-primary:hover { background-color: #f1c40f; transform: scale(1.05); }
 
-/* --- HOSTS SECTION --- */
-.about-hosts { padding: 60px 20px; text-align: center; background: #181818; margin-top: 0; }
-.section-intro { margin-bottom: 40px; color: #888; }
-.hosts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-.host-card { background: #121212; padding: 20px; border: 1px solid #333; border-radius: 8px; }
-.host-avatar { width: 120px; height: 120px; border-radius: 50%; border: 2px solid #d4af37; margin-bottom: 15px; object-fit: cover; }
-.host-card h3 { color: #d4af37; margin-bottom: 10px; }
+.btn-primary:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    background: #fff;
+}
 
-/* --- PROPOSAL 5: BUDGET TABLE --- */
-.budget-section { padding: 60px 0; text-align: center; }
-.budget-section h2 { margin-bottom: 30px; color: #d4af37; }
-.table-responsive { overflow-x: auto; }
-.budget-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: #1a1a1a;
+/* --- THE REALITY CHECK TABLE --- */
+.budget-section { padding: 100px 20px; text-align: center; }
+.budget-table { 
+    width: 100%; 
+    max-width: 800px;
+    margin: 40px auto; 
+    background: var(--card-bg); 
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.budget-table th, .budget-table td { padding: 20px; text-align: left; border-bottom: 1px solid #222; }
+.budget-table th { background: #000; color: var(--gold); font-size: 1.1rem; }
+.budget-table tr:last-child td { border-bottom: none; }
+.budget-table tr:hover { background: #222; }
+
+/* --- VINYL GRID (The Cool Part) --- */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 50px; 
+    padding: 80px 0; 
+}
+
+.vinyl-card { 
+    position: relative; 
+    background: transparent;
+    transition: var(--transition);
+}
+
+.vinyl-sleeve { 
+    position: relative; 
+    z-index: 2; 
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.8);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.vinyl-sleeve img { width: 100%; display: block; filter: grayscale(20%); transition: 0.5s; }
+
+.vinyl-disc { 
+    position: absolute; 
+    top: 5px; right: 0; 
+    width: 270px; height: 270px; 
+    background: radial-gradient(circle, #111 20%, #222 25%, #111 30%, #222 100%); 
+    border-radius: 50%; 
+    z-index: 1; 
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vinyl-card:hover .vinyl-disc { transform: translateX(140px) rotate(180deg); }
+.vinyl-card:hover .vinyl-sleeve img { filter: grayscale(0%); }
+
+/* --- REVIEWS --- */
+.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+.review-card { 
+    background: #1a1a1a; 
+    padding: 30px; 
+    border-radius: 15px;
+    position: relative;
     border: 1px solid #333;
 }
-.budget-table th, .budget-table td {
-    padding: 15px;
-    border-bottom: 1px solid #333;
-    text-align: left;
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 20px;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
 }
-.budget-table th { background-color: #000; color: #d4af37; text-transform: uppercase; letter-spacing: 1px; }
-.budget-table tr:hover { background-color: #222; }
 
-/* --- PROPOSAL 3: FAKE REVIEWS --- */
-.fake-reviews { padding: 60px 0; text-align: center; border-top: 1px solid #333; }
-.fake-reviews h2 { margin-bottom: 30px; }
-.review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.review-card { background: #1a1a1a; padding: 25px; font-style: italic; border-radius: 8px; border: 1px solid #222; }
-.review-card span { display: block; margin-top: 15px; color: #d4af37; font-size: 0.8rem; font-weight: bold; font-style: normal;}
+/* --- EPISODE PAGE --- */
+.episode-hero { padding: 100px 0 50px; text-align: center; border-bottom: 1px solid #333; }
+.episode-hero h1 { font-size: 3.5rem; }
 
-/* --- VINYL EFFECT --- */
-.episodes-section { padding: 80px 0; background: #121212; }
-.episodes-section h2 { text-align: center; margin-bottom: 50px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; justify-items: center; }
-.vinyl-card { position: relative; width: 280px; display: block; cursor: pointer; }
-.vinyl-sleeve { position: relative; z-index: 2; width: 280px; height: 280px; background: #000; transition: transform 0.3s ease; }
-.vinyl-sleeve img { width: 100%; height: 100%; object-fit: cover; }
-.vinyl-disc { position: absolute; top: 5px; right: 5px; width: 270px; height: 270px; background: radial-gradient(circle, #111 20%, #333 21%, #111 22%, #333 100%); border-radius: 50%; z-index: 1; transition: transform 0.4s ease; }
-.vinyl-card:hover .vinyl-disc { transform: translateX(50%) rotate(90deg); }
-.vinyl-card:hover .vinyl-sleeve { transform: rotate(-2deg); }
-.card-info { margin-top: 15px; text-align: center; z-index: 3; position: relative; }
-.ep-number { font-size: 0.8rem; color: #d4af37; font-weight: bold; letter-spacing: 1px; }
-.locked { opacity: 0.5; pointer-events: none; filter: grayscale(1); }
-
-/* --- EPISODE PAGE SPECIFIC --- */
-.episode-nav { padding: 20px 0; }
-.back-link { color: #888; font-size: 0.9rem; }
-.back-link:hover { color: #d4af37; }
-.episode-hero { text-align: center; padding: 40px 0; border-bottom: 1px solid #333; }
-.label { background: #d4af37; color: #000; padding: 2px 8px; font-size: 0.7rem; font-weight: bold; }
-.content { padding: 50px 20px; max-width: 800px; }
-.story-block p { margin-bottom: 20px; font-size: 1.1rem; }
-blockquote { border-left: 3px solid #d4af37; padding-left: 20px; font-style: italic; color: #fff; font-size: 1.2rem; margin: 30px 0; }
-.video-wrapper { margin-top: 20px; border: 1px solid #333; padding: 5px; background: #000; }
-video { width: 100%; height: auto; display: block; }
-
-/* --- PROPOSAL 1: CONSPIRACY BOX --- */
-.conspiracy-box {
-    background: #000;
-    border: 2px dashed #d4af37;
-    padding: 30px;
-    margin: 60px 0;
+.video-wrapper { 
+    background: #000; 
+    padding: 10px; 
+    border: 2px solid #333; 
     border-radius: 10px;
-    position: relative;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.1);
+    margin: 40px 0;
 }
-.conspiracy-box h2 { color: #d4af37; font-size: 1.5rem; margin-bottom: 15px; }
-.evidence-list { list-style: none; padding: 20px 0; }
-.evidence-list li { margin-bottom: 10px; color: #fff; }
-.evidence-list li strong { color: #f1c40f; }
 
-/* --- PROPOSAL 4: SASS BUTTON --- */
-.sass-container {
-    text-align: center;
-    background: #1a1a1a;
-    padding: 40px;
-    margin-top: 50px;
-    border-radius: 10px;
-}
-.btn-sass {
-    background: #fff;
-    color: #000;
-    border: none;
-    padding: 15px 30px;
+video { width: 100%; border-radius: 5px; }
+
+/* --- EASTER EGG (The Secret) --- */
+.secret-btn { 
+    background: #222; 
+    border: 1px solid #444; 
+    color: #888; 
+    padding: 8px 15px; 
+    font-size: 0.7rem;
     cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: 0.2s;
+    border-radius: 4px;
+    transition: 0.3s;
 }
-.btn-sass:hover { background: #d4af37; }
-#sass-text { margin-top: 20px; font-size: 1.5rem; color: #d4af37; font-family: 'Playfair Display', serif; min-height: 30px; font-style: italic; }
 
-.divider { border: 0; height: 1px; background: #333; margin: 60px 0; }
-.final-thought { background: #1a1a1a; padding: 30px; margin-top: 50px; border-left: 5px solid #d4af37; }
-footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #666; margin-top: 40px; border-top: 1px solid #333; }
+.secret-btn:hover { background: #ff4757; color: #fff; border-color: #ff4757; }
+
+.hidden { 
+    display: none; 
+    background: #ff4757; 
+    color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
+}
+
+.revealed { display: block !important; animation: slideDown 0.4s ease-out; }
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- FOOTER --- */
+footer { padding: 60px 0; text-align: center; border-top: 1px solid #222; color: #555; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-home h1 { font-size: 2.5rem; }
+    .vinyl-card:hover .vinyl-disc { transform: translateY(100px); }
+    .grid { grid-template-columns: 1fr; }
+}
