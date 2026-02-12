@@ -1,212 +1,144 @@
-/* THE COVER UNCOVERED - OFFICIAL STYLES 
-   "Designed with sweat, tears, and zero budget" 
-   Version 2.0: Now with 100% more drama.
-*/
+/* THE COVER UNCOVERED - REPAIRED STRUCTURE */
 
 :root {
     --gold: #d4af37;
-    --gold-glow: rgba(212, 175, 55, 0.3);
-    --dark-bg: #0a0a0a;
-    --card-bg: rgba(26, 26, 26, 0.8);
-    --text-main: #f0f0f0;
-    --text-dim: #a0a0a0;
-    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    --dark-bg: #121212;
+    --card-bg: #1a1a1a;
+    --text-main: #e0e0e0;
 }
 
-/* --- BASE STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     background: var(--dark-bg); 
     color: var(--text-main); 
     font-family: 'Roboto', sans-serif; 
-    overflow-x: hidden;
     line-height: 1.6;
 }
 
-/* Custom Selection Color (Matches Gold) */
-::selection { background: var(--gold); color: #000; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-/* --- TYPOGRAPHY --- */
-h1, h2, h3 { 
-    font-family: 'Playfair Display', serif; 
-    color: #fff; 
-    letter-spacing: -0.5px;
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO (Estructura fija) --- */
 .hero-home { 
-    height: 90vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1514525253361-b83f859b73c0?auto=format&fit=crop&w=1200'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 0 20px;
+    border-bottom: 3px solid var(--gold);
 }
 
-.hero-home h1 { 
-    font-size: clamp(3rem, 8vw, 5.5rem); 
-    text-transform: uppercase; 
-    margin-bottom: 15px;
-    text-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
+.hero-home h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #fff; margin-bottom: 10px; }
+.subtitle { font-size: 1.5rem; color: var(--gold); font-style: italic; margin-bottom: 25px; }
 
-.subtitle { 
-    font-size: clamp(1.1rem, 3vw, 1.8rem); 
-    color: var(--gold); 
-    font-style: italic; 
-    margin-bottom: 35px;
-    font-weight: 300;
-}
-
-/* --- BUTTONS --- */
 .btn-primary { 
     display: inline-block; 
-    background: transparent; 
-    color: var(--gold); 
-    padding: 16px 45px; 
-    border-radius: 4px; /* Angled edges look more rock-n-roll */
-    font-weight: 900; 
+    background: var(--gold); 
+    color: #000; 
+    padding: 12px 30px; 
+    border-radius: 5px; 
+    font-weight: bold; 
     text-decoration: none; 
-    border: 2px solid var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: var(--transition);
+    transition: 0.3s;
 }
 
-.btn-primary:hover { 
-    background: var(--gold);
-    color: #000;
-    transform: scale(1.05);
-    box-shadow: 0 0 30px var(--gold-glow);
-}
+.btn-primary:hover { transform: scale(1.05); background: #fff; }
 
-/* --- BUDGET TABLE (Glassmorphism) --- */
-.budget-section { padding: 80px 20px; text-align: center; }
+/* --- TABLA (Estructura limpia) --- */
+.budget-section { padding: 60px 0; text-align: center; }
 .budget-table { 
     width: 100%; 
-    max-width: 850px;
-    margin: 40px auto; 
-    background: var(--card-bg); 
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 2px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    margin-top: 30px; 
+    border-collapse: collapse; 
+    background: var(--card-bg);
 }
 
-.budget-table th, .budget-table td { padding: 22px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.budget-table th { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-.budget-table tr:hover { background: rgba(212, 175, 55, 0.05); }
+.budget-table th, .budget-table td { padding: 15px; border: 1px solid #333; text-align: left; }
+.budget-table th { background: #000; color: var(--gold); }
 
-/* --- VINYL GRID --- */
+/* --- VINYL GRID (Corregido) --- */
 .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 60px; 
-    padding: 60px 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 40px; 
+    justify-content: center; 
+    padding: 50px 0; 
 }
 
 .vinyl-card { 
     position: relative; 
-    padding: 20px;
-    transition: var(--transition);
+    width: 300px; /* Tamaño fijo para que no se rompa */
+    text-decoration: none;
 }
 
 .vinyl-sleeve { 
     position: relative; 
     z-index: 2; 
-    box-shadow: 15px 15px 35px rgba(0,0,0,0.9);
-    transition: var(--transition);
+    width: 300px; 
+    height: 300px; 
+    background: #000;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
+
+.vinyl-sleeve img { width: 100%; height: 100%; object-fit: cover; }
 
 .vinyl-disc { 
     position: absolute; 
-    top: 25px; right: 20px; 
-    width: 280px; height: 280px; 
-    background: radial-gradient(circle, #000 15%, #111 16%, #000 17%, #111 100%); 
+    top: 10px; 
+    right: 10px; 
+    width: 280px; 
+    height: 280px; 
+    background: radial-gradient(circle, #111 20%, #333 21%, #111 22%, #333 100%); 
     border-radius: 50%; 
     z-index: 1; 
-    transition: var(--transition);
+    transition: transform 0.5s ease;
 }
 
-/* Vinyl Spin & Move Animation */
-.vinyl-card:hover .vinyl-disc { 
-    transform: translateX(120px) rotate(180deg); 
-    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+/* Efecto hover original que funciona */
+.vinyl-card:hover .vinyl-disc { transform: translateX(140px); }
+
+.card-info { text-align: center; margin-top: 15px; }
+.card-info h3 { font-family: 'Playfair Display', serif; color: #fff; }
+
+/* --- REVIEWS (Bloques claros) --- */
+.review-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin: 40px 0; 
 }
 
-.vinyl-card:hover .vinyl-sleeve { transform: translateY(-10px) rotate(-2deg); }
-
-/* --- REVIEW CARDS --- */
 .review-card { 
-    background: linear-gradient(145deg, #1a1a1a, #111);
-    padding: 40px; 
-    border-radius: 4px;
-    border-top: 2px solid transparent;
-    transition: var(--transition);
+    background: var(--card-bg); 
+    padding: 25px; 
+    border-radius: 5px; 
+    font-style: italic;
+    border-left: 4px solid var(--gold);
 }
 
-.review-card:hover { border-top-color: var(--gold); transform: translateY(-5px); }
-.review-card p { font-size: 1.1rem; color: #fff; font-style: italic; }
-.review-card span { display: block; margin-top: 15px; color: var(--gold); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
+.review-card span { display: block; margin-top: 10px; color: var(--gold); font-size: 0.8rem; font-style: normal; }
 
 /* --- EPISODE PAGE --- */
-.episode-hero { 
-    background: #000;
-    padding: 120px 0 60px; 
-    text-align: center; 
-}
+.episode-hero { padding: 60px 0; text-align: center; border-bottom: 1px solid #333; }
+.video-wrapper { background: #000; padding: 10px; border: 1px solid #333; margin: 30px 0; }
+video { width: 100%; }
 
-.video-wrapper { 
-    background: #111; 
-    padding: 15px; 
-    border: 1px solid #222; 
-    transition: var(--transition);
-}
+/* --- EASTER EGG (The Secret) --- */
+.secret-btn { background: none; border: 1px solid #444; color: #555; padding: 5px 10px; cursor: pointer; margin: 20px 0; }
+.hidden { display: none; background: #d4af37; color: #000; padding: 20px; margin-top: 10px; text-align: left; }
+.revealed { display: block !important; }
 
-.video-wrapper:hover { border-color: var(--gold); box-shadow: 0 0 40px var(--gold-glow); }
+/* --- SASS BUTTON --- */
+.sass-container { text-align: center; padding: 40px 0; background: var(--card-bg); margin-top: 40px; }
+.btn-sass { background: #fff; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; }
 
-/* --- THE CLONE SECRET BUTTON --- */
-.secret-btn { 
-    background: transparent;
-    border: 1px solid #333;
-    color: #555;
-    padding: 10px 20px;
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: crosshair; /* Changes to crosshair for mystery */
-    transition: 0.3s;
-}
+footer { padding: 40px 0; text-align: center; color: #555; font-size: 0.8rem; }
 
-.secret-btn:hover { color: #fff; border-color: #ff4757; text-shadow: 0 0 10px #ff4757; }
-
-.hidden { 
-    background: #900; /* Darker blood red */
-    color: #fff; 
-    border-radius: 0;
-    font-family: 'Courier New', Courier, monospace; /* Looks like a classified document */
-}
-
-/* --- FOOTER --- */
-footer { 
-    padding: 80px 0 40px; 
-    text-align: center; 
-    font-size: 0.75rem; 
-    color: #444; 
-    letter-spacing: 1px;
-}
-
-/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .hero-home h1 { font-size: 2.8rem; }
-    .vinyl-card:hover .vinyl-disc { transform: translateY(80px) rotate(90deg); }
-    .vinyl-card:hover .vinyl-sleeve { transform: scale(0.95); }
-    .grid { gap: 100px; } /* More space for the disc drop on mobile */
+    .hero-home h1 { font-size: 2.5rem; }
+    .vinyl-card:hover .vinyl-disc { transform: translateY(100px); }
 }
