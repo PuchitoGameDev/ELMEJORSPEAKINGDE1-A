@@ -19,7 +19,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 40px; 
+}
+
+.description-block {
+    max-width: 600px;
+    margin-bottom: 30px; /* Separación con el botón */
+}
 
 /* --- HERO (Minimalist & Impactful) --- */
 .hero-home { 
@@ -38,6 +47,13 @@ body {
     font-weight: 700;
     line-height: 1;
     margin-bottom: 20px;
+}
+
+.hero-home .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio constante entre h1, p y botón */
 }
 
 .subtitle { 
@@ -94,15 +110,16 @@ body {
 /* --- VINYL GRID (High-End Gallery) --- */
 .grid { 
     display: flex; 
-    gap: 80px; 
+    gap: 100px; /* Espacio extra para que el disco tenga donde salir */
     justify-content: center; 
-    padding: 100px 0; 
+    padding: 100px 0;
+    flex-wrap: wrap; 
 }
 
 .vinyl-card { 
     position: relative; 
     width: 350px; 
-    text-decoration: none;
+    margin-bottom: 50px; /* Espacio inferior para que no pise la siguiente sección */
 }
 
 .vinyl-sleeve { 
@@ -137,7 +154,12 @@ body {
 .card-info h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; }
 
 /* --- REVIEWS (Minimalist Cards) --- */
-.review-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-top: 60px; }
+.review-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 40px; 
+    margin: 80px 0; 
+}
 .review-card { padding: 0; }
 .review-card p { font-size: 1.1rem; color: var(--text-main); font-style: italic; margin-bottom: 15px; line-height: 1.4; }
 .review-card span { color: var(--gold); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
@@ -151,6 +173,10 @@ body {
     background: #000;
     padding: 0;
     overflow: hidden;
+}
+
+.video-section, .extra-section {
+    margin-bottom: 80px; /* Espacio entre el video y el siguiente bloque */
 }
 
 video { width: 100%; display: block; filter: brightness(0.9); transition: 0.3s; }
@@ -185,7 +211,15 @@ video:hover { filter: brightness(1); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* --- SASS BUTTON (Clean) --- */
-.sass-container { padding: 80px 0; border-top: 1px solid #1a1a1a; margin-top: 80px; }
+.sass-container {
+    padding: 100px 0;
+    margin-top: 50px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
 .btn-sass { 
     background: var(--gold); 
     border: none; 
@@ -196,7 +230,10 @@ video:hover { filter: brightness(1); }
     font-size: 0.8rem;
 }
 
-#sass-text { margin-top: 30px; font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; }
+#sass-text {
+    min-height: 2.5rem; /* Evita que el resto de la web "salte" cuando aparece el texto */
+    text-align: center;
+}
 
 /* --- FOOTER --- */
 footer { padding: 100px 0 40px; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
