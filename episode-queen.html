@@ -9,13 +9,13 @@
 </head>
 <body>
 
-    <nav class="container" style="padding: 20px 0;">
-        <a href="index.html" style="color: #888; text-decoration: none;">← Back to Home</a>
+    <nav class="container" style="padding: 40px 0 0;">
+        <a href="index.html" style="color: var(--gold); text-decoration: none; letter-spacing: 2px; font-size: 0.8rem;">← BACK TO HOME</a>
     </nav>
 
     <header class="episode-hero">
         <div class="container">
-            <span style="background: #d4af37; color: #000; padding: 2px 10px; font-weight: bold; font-size: 0.8rem;">EPISODE 01</span>
+            <span style="color: var(--gold); letter-spacing: 3px; font-weight: bold; font-size: 0.7rem; text-transform: uppercase;">Episode 01</span>
             <h1>A Night at the Opera</h1>
             <p class="subtitle">Decoding Freddie Mercury's Masterpiece.</p>
         </div>
@@ -26,35 +26,35 @@
             <h3>The Art Behind the Music</h3>
             <p>It's not just a fancy drawing. Freddie Mercury, who actually studied graphic design, created this crest to make the band look royal. He combined the zodiac signs of all members: two lions for Leo, a crab for Cancer, and two fairies for Virgo. All protected by a massive Phoenix.</p>
             
-            <blockquote>
+            <blockquote style="border-left: 2px solid var(--gold); padding-left: 20px; margin: 30px 0; font-style: italic; color: var(--text-dim);">
                 "I don't care, dear. We're releasing it." <br>
-                <cite>— Freddie Mercury on why Bohemian Rhapsody was 6 minutes long.</cite>
+                <cite style="display: block; margin-top: 10px; font-size: 0.8rem; letter-spacing: 1px; color: var(--gold);">— Freddie Mercury</cite>
             </blockquote>
         </div>
 
         <div class="video-section">
             <h3>Main Analysis</h3>
             <div class="video-wrapper">
-                <video controls>
+                <video controls poster="images/thumb-podcast.jpg" onerror="this.poster='https://placehold.co/1280x720/0a0a0a/d4af37?text=Podcast+Analysis'">
                     <source src="videos/podcast-queen.mp4" type="video/mp4">
-                    Your browser doesn't support video. Check the 'videos' folder.
+                    Your browser doesn't support video.
                 </video>
             </div>
         </div>
 
         <div class="extra-section">
             <h3>The Recreation (The Drama!)</h3>
-            <p>We tried to recreate the vibes of the original music video. Dark room, strange faces, and a lot of passion. Check it out below.</p>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">We tried to recreate the vibes of the original music video. Dark room, strange faces, and a lot of passion.</p>
             <div class="video-wrapper">
-                <video controls>
+                <video controls poster="images/thumb-extra.jpg" onerror="this.poster='https://placehold.co/1280x720/0a0a0a/d4af37?text=The+Recreation'">
                     <source src="videos/extra-queen.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-top: 60px;">
                 <button onclick="toggleConspiracy()" class="secret-btn">SECRET_FILE.DOC</button>
                 <div id="conspiracy-content" class="hidden">
-                    <h2>CLONE THEORY CONFIRMED</h2>
+                    <h2 style="font-family: 'Inter', sans-serif; letter-spacing: 1px;">CLONE THEORY CONFIRMED</h2>
                     <p>Evidence suggests Host 1 and Host 2 are the same entity moving at high speed to save on production costs. Budget: 0€. Innovation: 100%.</p>
                 </div>
             </div>
@@ -62,15 +62,13 @@
 
         <div class="sass-container">
             <h3>Freddie's Quote Generator</h3>
-            <p>Click the button for some legendary motivation.</p>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">Click for some legendary motivation.</p>
             <button onclick="freddieSass()" class="btn-sass">⚡ DARLING, CLICK ME</button>
-            <p id="sass-text" style="opacity: 0; transition: 0.5s; margin-top: 20px; font-size: 1.5rem; color: #d4af37;"></p>
+            <div style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
+                <p id="sass-text" style="opacity: 0; transition: 0.5s; font-size: 1.8rem; color: #fff; font-family: 'Playfair Display', serif;"></p>
+            </div>
         </div>
 
-        <div class="final-thought" style="margin-top: 50px; border-left: 4px solid #d4af37; padding: 20px; background: #1a1a1a;">
-            <h3>Wrapping up</h3>
-            <p>So, does the cover matter? Absolutely. Without the crest, Queen wouldn't be Queen. It gave the music a face before the first note even played.</p>
-        </div>
     </section>
 
     <footer>
@@ -78,13 +76,11 @@
     </footer>
 
     <script>
-        // Easter Egg Logic
         function toggleConspiracy() {
             const content = document.getElementById("conspiracy-content");
             content.classList.toggle("revealed");
         }
 
-        // Sass Button Logic
         function freddieSass() {
             const quotes = [
                 "I don't care, dear!",
@@ -92,10 +88,15 @@
                 "I won't be a rockstar. I will be a legend.",
                 "We are releasing it!",
                 "Get on with it, darling."
+                "Give him a 10, teacher."
             ];
             const display = document.getElementById('sass-text');
-            display.innerText = '"' + quotes[Math.floor(Math.random() * quotes.length)] + '"';
-            display.style.opacity = 1;
+            display.style.opacity = 0; // Efecto de parpadeo al cambiar
+            
+            setTimeout(() => {
+                display.innerText = '"' + quotes[Math.floor(Math.random() * quotes.length)] + '"';
+                display.style.opacity = 1;
+            }, 200);
         }
     </script>
 </body>
