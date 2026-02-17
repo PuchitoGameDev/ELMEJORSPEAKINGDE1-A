@@ -115,7 +115,7 @@ body {
 /* --- VINYL GRID (High-End Gallery) --- */
 .grid { 
     display: flex; 
-    gap: 100px; /* Espacio extra para que el disco tenga donde salir */
+    gap: 120px; /* Espacio extra para que el disco tenga donde salir */
     justify-content: center; 
     padding: 100px 0;
     flex-wrap: wrap; 
