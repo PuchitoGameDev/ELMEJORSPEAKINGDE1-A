@@ -24,6 +24,23 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+body.queen-page {
+    background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), 
+                      url('https://raw.githubusercontent.com/PuchitoGameDev/ELMEJORSPEAKINGDE1-A/d4ff85629a51ff482b1ec69f9e484ab7f545b692/ANightAtTheOpera.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Fondo para el Episodio */
+body.ordinary-page {
+    background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
+                      url('https://raw.githubusercontent.com/PuchitoGameDev/ELMEJORSPEAKINGDE1-A/refs/heads/main/ordinary.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .container { 
     max-width: 1100px; 
     margin: 0 auto; 
@@ -176,8 +193,26 @@ body {
 .review-card span { color: var(--gold); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
 
 /* --- EPISODE PAGE --- */
-.episode-hero { padding: 120px 0 60px; text-align: center; }
-.episode-hero h1 { font-size: 4rem; margin-bottom: 10px; }
+/* --- EPISODE PAGE --- */
+.episode-hero { 
+    /* Ajusta 'tu-imagen.jpg' por la ruta real de tu archivo */
+    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
+                url('tu-imagen.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax sutil */
+    
+    padding: 160px 0 100px; /* Aumentamos el padding para lucir la imagen */
+    text-align: center; 
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.episode-hero h1 { 
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5rem); /* Tamaño fluido */
+    margin-bottom: 10px; 
+    letter-spacing: -1px;
+}
 
 .video-wrapper { 
     margin: 60px 0;
