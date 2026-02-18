@@ -25,19 +25,23 @@ body {
 }
 
 body.queen-page {
+    min-height: 100vh;
+    background-position: top center;
     background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), 
                       url('https://raw.githubusercontent.com/PuchitoGameDev/ELMEJORSPEAKINGDE1-A/d4ff85629a51ff482b1ec69f9e484ab7f545b692/ANightAtTheOpera.png');
     background-size: cover;
-    background-position: center;
+    
     background-attachment: fixed;
 }
 
 /* Fondo para el Episodio */
 body.ordinary-page {
+    min-height: 100vh;
+    background-position: top center;
     background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
                       url('https://raw.githubusercontent.com/PuchitoGameDev/ELMEJORSPEAKINGDE1-A/refs/heads/main/ordinary.png');
     background-size: cover;
-    background-position: center;
+    
     background-attachment: fixed;
 }
 
